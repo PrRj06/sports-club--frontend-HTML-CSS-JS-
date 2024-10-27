@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        body{
+            background-image: url(images/coverphoto.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        #image{
+            margin:10%;
+            text-align: center;
+            
+        }
+        .cont-img{
+            margin: 10px;
+            border: 10px solid #1ae2e29d;
+            border-radius: 15px;
+        }
+        .cont-img:hover{
+            transform: scale(1.05);
+            box-shadow: 1px 1px 10px white,-1px -1px 10px white;
+        }
+        .btn-1{
+            background-image: url(images/icons8-linkedin-logo-50.png);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+            margin-left: 45%;
+            margin-top: 2px;
+        }
+        .btn-2{
+            background-image: url(images/icons8-github-50.png);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header style="height: 150px;">
+        <div id="logo">
+            <a href="home.html"><img src="images/logo.png" width="200px" height="150px"></a>
+        </div>
+        <a href="login.html"><buttom class="lgbutton">Login</buttom></a>
+        <a href="signup.html"><buttom class="subutton">Sign Up</buttom></a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="image">
+            <p style="background-color: rgba(0, 19, 5, 0.201);color: white;font-size: 50px;font-weight: bolder;">Our Gallery</p>
+            <img class="cont-img" src="images/img-1.jpg" width="250px" height="300px">
+            <img class="cont-img" src="images/img-2.jpg" width="250px" height="300px">
+            <img class="cont-img" src="images/img-3.jpg" width="250px" height="300px">
+            <img class="cont-img" src="images/img-4.jpg" width="250px" height="300px"><br>
+            <img class="cont-img" src="images/img-5.jpg" width="250px" height="300px">
+            <img class="cont-img" src="images/img-6.jpg" width="250px" height="300px">
+            <img class="cont-img" src="images/img-7.jpg" width="250px" height="300px">
+            <img class="cont-img" src="images/img-8.jpg" width="250px" height="300px">
+
+        </div>
+    </main>
+    <footer>
+        <p class="foot">My Webpage &copy; 2024. All rights are resreved.</p>
+        <a href="https://www.linkedin.com/in/prabhat-ranjan-7256782b5/"><button class="btn-1"></button></a>
+        <a href="https://github.com/PrRj06"><button class="btn-2"></button></a>
+    </footer>
+</body>
+</html>
