@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        body{
+            background-image: url(images/coverphoto.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        #parent{
+            width: 72pc;
+            height: 40pc;
+            margin:3pc 18pc 3pc 12pc;
+            background-color: white;
+            clear: both;
+        }
+        #child1{
+            float: left;
+            width: 25pc;
+            height: 30pc;
+            margin: 5pc 0pc 5pc 2pc;
+            color: black;
+        }
+
+        #article{
+            margin: 2pc;
+            font-weight: bold;
+            
+        }
+
+        .form{
+            float: right;
+            width: 35pc;
+            /* height: 30pc; */
+            margin:5pc 2pc 5pc 2pc;
+            background-color: greenyellow;
+        }
+        .form input{
+            width: 30pc;
+            height: 2.5pc;
+            font-size: 20px;
+        }
+        .form ::placeholder{
+            color: red;
+        }
+        .btn-1{
+            background-image: url(images/icons8-linkedin-logo-50.png);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+            margin-left: 45%;
+            margin-top: 2px;
+        }
+        .btn-2{
+            background-image: url(images/icons8-github-50.png);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header style="height: 150px;">
+        <div id="logo">
+            <a href="home.html"><img src="images/logo.png" width="200px" height="150px"></a>
+        </div>
+        <a href="login.html"><buttom class="lgbutton">Login</buttom></a>
+        <a href="signup.html"><buttom class="subutton">Sign Up</buttom></a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="parent">
+            <div id="child1">
+                <article id="article">
+                    <p style="padding-left: 2.5pc;font-size: 30px;">Feel Feel To Know Us</p>
+                    <p style="font-size: 20px;">Call us for sport related enquiry on this number.</p>
+                    <address style="font-weight: bold;">
+                        Behind Lovely Professional University<br>
+                        Grand Trunk road<br>
+                        Phagwara Punjab India 144411
+                    </address>
+                    <dl style="font-weight: bold;">
+                        <dt>Contact No :</dt><br>
+                            <dd>XXXXXX1631</dd><br>
+                            <dd>XXXXXX4510</dd>
+                    </dl>
+                </article>
+            </div>
+            <div class="form">
+                <form style="margin: 2pc;" onsubmit="return validateForm();">
+                    <input type="text" id="name" placeholder="Name"><br>
+                    <span class="error" id="nameError"></span><br><br>
+
+                    <input type="email" id="email" placeholder="E-mail"><br>
+                    <span class="error" id="emailError"></span><br><br>
+                    
+                    <input type="tel" id="phone" placeholder="Phone No"><br>
+                    <span class="error" id="phoneError"></span><br><br>
+                    
+                    <input type="text" id="subject" placeholder="Subject"><br>
+                    <span class="error" id="subjectError"></span><br><br>
+                    
+                    <input type="text" id="description" placeholder="Description"><br>
+                    <span class="error" id="descError"></span><br><br>
+                    
+                    <input style="margin-left: 7pc;width: 15pc;background-color: red;" type="submit" placeholder="Submit" id="formsubmit">
+                    <span class="success" id="formSuccess"></span><br><br>
+                </form>
+            </div>
+            <script>
+                function validateForm() {
+                    let isValid = true;
+
+                    // Clear previous error messages
+                            document.getElementById("nameError").innerHTML = "";
+                            document.getElementById("emailError").innerHTML = "";
+                            document.getElementById("phoneError").innerHTML = "";
+                            document.getElementById("subjectError").innerHTML = "";
+                            document.getElementById("descError").innerHTML = "";
+                            document.getElementById("formSuccess").innerHTML = "";
+
+                            // Validate  Name
+                            const Name = document.getElementById("name").value;
+                            if (Name === "") {
+                                document.getElementById("nameError").innerHTML = "First Name is required.";
+                                isValid = false;
+                            }
+
+                            // Validate  email
+                            const email = document.getElementById("email").value;
+                            if (email === "") {
+                                document.getElementById("emailError").innerHTML = "Email is required.";
+                                isValid = false;
+                            }
+
+                            // Validate  phone
+                            const phone = document.getElementById("phone").value;
+                            if (phone === "") {
+                                document.getElementById("phoneError").innerHTML = "Phone number is required.";
+                                isValid = false;
+                            }
+                            
+                            // Validate  subject
+                            const subject = document.getElementById("subject").value;
+                            if (subject === "") {
+                                document.getElementById("subjectError").innerHTML = "Subject is required.";
+                                isValid = false;
+                            }
+
+                            // Validate  desription
+                            const desc = document.getElementById("description").value;
+                            if (desc === "") {
+                                document.getElementById("descError").innerHTML = "Description is required.";
+                                isValid = false;
+                            }
+                            // Display success message if form is valid
+                            if (isValid) {
+                                document.getElementById("formSuccess").innerHTML = "Form submitted successfully!";
+                            }
+                
+                            return isValid; // Prevent form submission if false
+
+                            // Helper function to validate email format
+                        function validateEmail(email) {
+                            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                            return emailPattern.test(email);
+                        }
+
+                }
+            </script>
+        </div>
+    <footer>
+        <p class="foot">My Webpage &copy; 2024. All rights are resreved.</p>
+        <a href="https://www.linkedin.com/in/prabhat-ranjan-7256782b5/"><button class="btn-1"></button></a>
+        <a href="https://github.com/PrRj06"><button class="btn-2"></button></a>
+    </footer>
+</body>
+</html>
