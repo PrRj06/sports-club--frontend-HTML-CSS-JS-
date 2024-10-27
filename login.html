@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        body{
+            background-image: url(images/coverphoto.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        #maindiv{
+            background-color: rgba(245,232,203,0.596);
+            width: 35%;
+            border-radius: 15px;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            padding: 40px;
+            text-align: left;
+        }
+        form input{
+            font-size: medium;
+        }
+        label{
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+        }
+        input[type="email"],input[type="password"]{
+            width: 100%;
+            height: 40px;
+            margin: 2px;
+            border: none;
+        }
+        input[type="submit"]{
+            width: 101%;
+            height: 40px;
+            margin: 2px;
+            font-weight: bolder;
+            font-size: medium;
+            border: none;
+            background-color: green;
+            color: white;
+        }
+        .btn-1{
+            background-image: url(images/icons8-linkedin-logo-50.png);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+            margin-left: 45%;
+            margin-top: 2px;
+        }
+        .btn-2{
+            background-image: url(images/icons8-github-50.png);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header style="height: 150px;">
+        <div id="logo">
+            <a href="home.html"><img src="images/logo.png" width="200px" height="150px"></a>
+        </div>
+        <a href="login.html"><buttom class="lgbutton">Login</buttom></a>
+        <a href="signup.html"><buttom class="subutton">Sign Up</buttom></a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <center>
+            <div id="maindiv">
+                <h1>Login!</h1>
+                    <form onsubmit="return validateForm()">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" id="email" placeholder="Email"><br>
+                        <span class="error" id="emailError"></span><br><br>
+
+                        <label for="password">Password: </label>
+                        <input type="password" name="password" id="password" placeholder="Password"><br>
+                        <span class="error" id="passwordError"></span><br><br>
+
+                        <input type="submit" placeholder="Submit Form">
+                    </form>
+                    <script>
+                        function validateForm() {
+                            let isValid = true;
+                
+                            // Clear previous errors
+                            document.getElementById("emailError").innerHTML = "";
+                            document.getElementById("passwordError").innerHTML = "";
+                
+                            // Validate Email
+                            const email = document.getElementById("email").value;
+                            if (email === "") {
+                                document.getElementById("emailError").innerHTML = "Email is required.";
+                                isValid = false;
+                            }
+                
+                            // Validate Password
+                            const password = document.getElementById("password").value;
+                            if (password === "") {
+                                document.getElementById("passwordError").innerHTML = "Password is required.";
+                                isValid = false;
+                            }
+                
+                            return isValid; // Prevent form submission if false
+                        }
+                        
+                    </script>
+            </div>
+        </center>
+    </main>  
+    <footer>
+        <p class="foot">My Webpage &copy; 2024. All rights are resreved.</p>
+        <a href="https://www.linkedin.com/in/prabhat-ranjan-7256782b5/"><button class="btn-1"></button></a>
+        <a href="https://github.com/PrRj06"><button class="btn-2"></button></a>
+    </footer>
+</body>
+</html>
